@@ -29,11 +29,12 @@ interface UserBasicInfo {
 
 const app = express();
 const port = process.env.PORT || 8000;
+const allowedOrigin = process.env.ALLOWED_ORIGIN
 
 
 app.use(
     cors({
-        origin: "https://nwwrestling.netlify.app",
+        origin: allowedOrigin,
         methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
         credentials: true,
     })
